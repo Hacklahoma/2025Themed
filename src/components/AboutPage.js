@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './AboutPage.css';
 
 import TitleText from '../assets/S2_TitleText.png';
@@ -21,17 +21,15 @@ import Image9 from '../assets/images/DSC_0250.jpg';
 const imageList = [Image1, Image2, Image3, Image4, Image5, Image6, Image7, Image8, Image9];
 
 const AboutPage = () => {
+  const [modalImage, setModalImage] = useState(null);
 
   return (
     <div className="about-page">
-
       {/* Desktop Layout */}
       <div className="about-page-desktop">
-
         <img className="TitleHighlight" src={TitleHighlight} alt="TitleHighlight" />
         <img className="TitleText" src={TitleText} alt="TitleText" />
         <img className="BodyText" src={BodyText} alt="BodyText" />
-
         <img className="ComicBook" src={ComicBook} alt="ComicBook" />
 
         {/* Carousel */}
@@ -40,20 +38,29 @@ const AboutPage = () => {
             <div className="slide-track">
               {imageList.concat(imageList).map((image, index) => (
                 <div className="slide" key={index}>
-                  <img src={image} alt={`Carousel image ${index}`} />
+                  <img
+                    src={image}
+                    alt={`Carousel image ${index}`}
+                    onClick={() => setModalImage(image)}
+                  />
                 </div>
               ))}
             </div>
           </div>
         </section>
-
       </div>
 
       {/* Mobile Layout */}
       <div className="about-page-mobile">
-
+        {/* Mobile content goes here */}
       </div>
 
+      {/* Modal */}
+      {modalImage && (
+        <div className="modal" onClick={() => setModalImage(null)}>
+          <img src={modalImage} alt="Enlarged view"/>
+        </div>
+      )}
     </div>
   );
 };
