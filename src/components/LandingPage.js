@@ -21,13 +21,14 @@ const LandingPage = () => {
 
                 <img className="title HacklahomaTitle" src={HacklahomaTitle} alt="Hacklahoma Title" />
                 <img className="title HacklahomaTitle2025" src={HacklahomaTitle2025} alt="Hacklahoma Title 2025" />
-                <img className="title HacklahomaSubtitle" src={HacklahomaSubtitle} alt="Hacklahoma Subtitle" />
+                
+                <img className="subtitle HacklahomaSubtitle" src={HacklahomaSubtitle} alt="Hacklahoma Subtitle" />
 
                 <img className="city City" src={City} alt="City" />
                 <img className="city Clouds" src={Clouds} alt="Clouds" />
 
                 <img className="mlhBanner" src={MLHBanner} alt="MLHBanner" />
-                <img className="ScissorTail" src={ScissorTail} alt="ScissorTail Logo" />
+                <img className="logo ScissorTail" src={ScissorTail} alt="ScissorTail Logo" />
 
             </div>
 
