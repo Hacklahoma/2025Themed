@@ -9,7 +9,7 @@
 }
 
 /* Desktop container: Maintain a 16:9 aspect ratio (1920x1080) */
-.inner-container {
+.landing-page-desktop {
   position: relative;
   width: 100%;
   height: auto;
@@ -18,7 +18,7 @@
 }
 
 /* Mobile-specific container, maintaining 9:16 aspect ratio (720x1280) */
-.mobile-container {
+.landing-page-mobile {
   display: none; /* Hide mobile by default */
   position: relative;
   width: 100%;
@@ -38,12 +38,12 @@ img {
 /* Media query for mobile devices (screen width <= 750px) */
 @media (max-width: 750px) {
   /* Hide the desktop container */
-  .inner-container {
+  .landing-page-desktop {
       display: none;
   }
 
   /* Show the mobile container */
-  .mobile-container {
+  .landing-page-mobile {
       display: flex;
   }
 }
@@ -51,43 +51,43 @@ img {
 /* Media query for desktop devices (screen width > 750px) */
 @media (min-width: 751px) {
   /* Show the desktop container */
-  .inner-container {
+  .landing-page-desktop {
       display: flex;
   }
 
   /* Hide the mobile container */
-  .mobile-container {
+  .landing-page-mobile {
       display: none;
   }
 }
 
-/* Adjust the inner-container for desktop */
+/* Adjust the landing-page-desktop for desktop */
 @media (max-aspect-ratio: 16/9) {
   /* When the viewport is taller than 16:9 */
-  .inner-container {
+  .landing-page-desktop {
       width: 100vw;
       height: calc(100vw * (9 / 16));
   }
 }
 @media (min-aspect-ratio: 16/9) {
   /* When the viewport is wider than 16:9 */
-  .inner-container {
+  .landing-page-desktop {
       width: calc(100vh * (16 / 9));
       height: 100vh;
   }
 }
 
-/* Adjust the mobile-container for mobile */
+/* Adjust the landing-page-mobile for mobile */
 @media (max-aspect-ratio: 9/16) {
   /* When the viewport is taller than 9:16 */
-  .mobile-container {
+  .landing-page-mobile {
       width: 100vw;
       height: calc(100vw * (16 / 9));
   }
 }
 @media (min-aspect-ratio: 9/16) {
   /* When the viewport is wider than 9:16 */
-  .mobile-container {
+  .landing-page-mobile {
       width: calc(100vh * (9 / 16));
       height: 100vh;
   }
