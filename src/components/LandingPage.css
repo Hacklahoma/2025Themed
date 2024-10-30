@@ -1,186 +1,94 @@
 /* General container for both desktop and mobile */
 .landing-page {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    overflow: hidden;
-    background-color: #b5faff;
-  }
-  
-  /* Desktop container: Maintain a 16:9 aspect ratio (1920x1080) */
+  position: relative;
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  overflow: hidden;
+  background: linear-gradient(to bottom, #fae0c9, #f49dd4);
+}
+
+/* Desktop container: Maintain a 16:9 aspect ratio (1920x1080) */
+.inner-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Mobile-specific container, maintaining 9:16 aspect ratio (720x1280) */
+.mobile-container {
+  display: none; /* Hide mobile by default */
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Ensure images fill their respective containers */
+img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Make sure images cover the div without distorting */
+}
+
+/* Media query for mobile devices (screen width <= 750px) */
+@media (max-width: 750px) {
+  /* Hide the desktop container */
   .inner-container {
-    position: relative;
-    width: 100%;  /* Default width */
-    height: 100%; /* Default height */
-    max-width: calc(100vh * (16 / 9)); /* Limit width based on height */
-    max-height: calc(100vw * (9 / 16)); /* Limit height based on width */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+      display: none;
   }
-  
-  /* Mobile-specific container, maintaining 9:16 aspect ratio (720x1280) */
+
+  /* Show the mobile container */
   .mobile-container {
-    display: none; /* Hide mobile by default */
-    position: relative;
-    width: 100%; /* Default width */
-    height: 100%; /* Default height */
-    max-width: calc(100vh * (9 / 16)); /* Limit width based on height */
-    max-height: calc(100vw * (16 / 9)); /* Limit height based on width */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Ensure images fill their respective containers */
-  img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Make sure images cover the div without distorting */
-  }
-  
-  /* Media query for mobile devices (screen width <= 750px) */
-  @media (max-width: 750px) {
-    /* Hide the desktop container */
-    .inner-container {
-      display: none;
-    }
-  
-    /* Show the mobile container */
-    .mobile-container {
       display: flex;
-    }
   }
-  
-  /* Media query for desktop devices (screen width > 750px) */
-  @media (min-width: 750px) {
-    /* Show the desktop container */
-    .inner-container {
+}
+
+/* Media query for desktop devices (screen width > 750px) */
+@media (min-width: 751px) {
+  /* Show the desktop container */
+  .inner-container {
       display: flex;
-    }
-  
-    /* Hide the mobile container */
-    .mobile-container {
-      display: none;
-    }
-  }
-  
-  /* For screens where width is less than the necessary aspect ratio for desktop (16:9) */
-  @media (max-aspect-ratio: 16/9) {
-    .inner-container {
-      width: 100vw;
-      height: calc(100vw * (9 / 16)); /* Maintain 16:9 aspect ratio based on width */
-    }
-  }
-  
-  /* For mobile, screens with less than the necessary aspect ratio for mobile (9:16) */
-  @media (max-aspect-ratio: 9/16) {
-    .mobile-container {
-      width: 100vw;
-      height: calc(100vw * (16 / 9)); /* Maintain 9:16 aspect ratio based on width */
-    }
-  }
-  
-/* Animation keyframes for superheroes (flying in from below) */
-@keyframes flyIn {
-    from {
-      transform: translateY(100vh); /* Start off-screen (below the screen) */
-      opacity: 0; /* Start invisible */
-    }
-    to {
-      transform: translateY(0); /* End at the current position */
-      opacity: 1; /* Fade in */
-    }
-  }
-  
-  /* Animation keyframes for clouds */
-  @keyframes slideInLeft {
-    from {
-      transform: translateX(-100vw); /* Start off-screen to the left */
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0); /* End at the current position */
-      opacity: 1;
-    }
-  }
-  
-  @keyframes slideInRight {
-    from {
-      transform: translateX(100vw); /* Start off-screen to the right */
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0); /* End at the current position */
-      opacity: 1;
-    }
-  }
-  
-  /* Animation keyframes for title */
-  @keyframes riseUp {
-    from {
-      transform: translateY(100vh); /* Start off-screen (below the screen) */
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0); /* End at the current position */
-      opacity: 1;
-    }
   }
 
-  /* Animation keyframes for MLH banner (slide in from the top) */
-@keyframes slideInTop {
-    from {
-      transform: translateY(-100vh); /* Start off-screen from the top */
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0); /* End at the current position */
-      opacity: 1;
-    }
+  /* Hide the mobile container */
+  .mobile-container {
+      display: none;
   }
-  
-  /* Apply animations to superheroes */
-  .hero {
-    animation: flyIn 1s ease-out forwards; /* Fly in from bottom */
-    opacity: 0; /* Start hidden */
-  }
-  
-  /* Apply different delays to each hero for a staggered effect */
-  .hero1 { animation-delay: 0.3s; }
-  .hero2 { animation-delay: 0.5s; }
-  .hero3 { animation-delay: 0.7s; }
-  .hero4 { animation-delay: 0.9s; }
-  .hero5 { animation-delay: 1.1s; }
-  .hero6 { animation-delay: 1.3s; }
-  
-  /* Apply animations to clouds */
-  .cloudleft {
-    animation: slideInLeft 1s ease-out forwards;
-    opacity: 0; /* Start hidden */
-    animation-delay: 0.5s;
-  }
-  
-  .cloudright {
-    animation: slideInRight 1s ease-out forwards;
-    opacity: 0; /* Start hidden */
-    animation-delay: 0.5s;
-  }
-  
-  /* Apply animation to title */
-  .title {
-    animation: riseUp 1s ease-out forwards;
-    opacity: 0; /* Start hidden */
-    animation-delay: 1.5s; /* Delay title so it comes in after the clouds and heroes */
-  }
+}
 
-  /* Apply animation to MLH Banner */
-  .mlhBanner {
-    animation: slideInTop 1s ease-out forwards;
-    opacity: 0;
-    animation-delay: 0.8s; /* Delay so the banner slides in after the clouds */
+/* Adjust the inner-container for desktop */
+@media (max-aspect-ratio: 16/9) {
+  /* When the viewport is taller than 16:9 */
+  .inner-container {
+      width: 100vw;
+      height: calc(100vw * (9 / 16));
   }
+}
+@media (min-aspect-ratio: 16/9) {
+  /* When the viewport is wider than 16:9 */
+  .inner-container {
+      width: calc(100vh * (16 / 9));
+      height: 100vh;
+  }
+}
+
+/* Adjust the mobile-container for mobile */
+@media (max-aspect-ratio: 9/16) {
+  /* When the viewport is taller than 9:16 */
+  .mobile-container {
+      width: 100vw;
+      height: calc(100vw * (16 / 9));
+  }
+}
+@media (min-aspect-ratio: 9/16) {
+  /* When the viewport is wider than 9:16 */
+  .mobile-container {
+      width: calc(100vh * (9 / 16));
+      height: 100vh;
+  }
+}
