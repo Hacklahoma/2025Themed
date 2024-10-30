@@ -1,0 +1,180 @@
+/* Import the Comic Neue font */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
+/* General container for both desktop and mobile */
+.faq-page {
+    position: relative;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center;     /* Center content vertically */
+    overflow: hidden;
+    background: linear-gradient(to bottom, #AEC6CF, black);
+}
+
+/* Desktop container: Maintain a 16:9 aspect ratio (1920x1080) */
+.faq-page-desktop {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Mobile-specific container, maintaining 9:16 aspect ratio (720x1280) */
+.faq-page-mobile {
+    display: none; /* Hide mobile by default */
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Media query for mobile devices (screen width <= 750px) */
+@media (max-width: 750px) {
+    /* Hide the desktop container */
+    .faq-page-desktop {
+        display: none;
+    }
+
+    /* Show the mobile container */
+    .faq-page-mobile {
+        display: flex;
+    }
+}
+
+/* Media query for desktop devices (screen width > 750px) */
+@media (min-width: 751px) {
+    /* Show the desktop container */
+    .faq-page-desktop {
+        display: flex;
+    }
+
+    /* Hide the mobile container */
+    .faq-page-mobile {
+        display: none;
+    }
+}
+
+/* Adjust the faq-page-desktop for desktop */
+@media (max-aspect-ratio: 16/9) {
+    /* When the viewport is taller than 16:9 */
+    .faq-page-desktop {
+        width: 100vw;
+        height: calc(100vw * (9 / 16));
+    }
+}
+@media (min-aspect-ratio: 16/9) {
+    /* When the viewport is wider than 16:9 */
+    .faq-page-desktop {
+        width: calc(100vh * (16 / 9));
+        height: 100vh;
+    }
+}
+
+/* Adjust the faq-page-mobile for mobile */
+@media (max-aspect-ratio: 9/16) {
+    /* When the viewport is taller than 9:16 */
+    .faq-page-mobile {
+        width: 100vw;
+        height: calc(100vw * (16 / 9));
+    }
+}
+@media (min-aspect-ratio: 9/16) {
+    /* When the viewport is wider than 9:16 */
+    .faq-page-mobile {
+        width: calc(100vh * (9 / 16));
+        height: 100vh;
+    }
+}
+
+/* Styles for the faq-container */
+.faq-container {
+    position: absolute;
+    right: 10vh; /* 10% of viewport height from the right edge */
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+    height: 90%; /* 90% of parent's height */
+    aspect-ratio: 1 / 1; /* Make it square */
+    background-color: white;
+    border: 5px solid black;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(4, 1fr);    /* 4 rows */
+    box-sizing: border-box;                /* Include border in size calculations */
+}
+
+/* Styles for each faq-section */
+.faq-section {
+    border: 3px solid black; /* Thickened the border */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Center text within each section */
+    padding: 10px;
+    font-size: calc(0.8em + 0.5vw); /* Responsive text size */
+    transition: transform 0.2s, box-shadow 0.2s; /* For hover effect */
+    cursor: pointer;
+    font-family: 'Comic Neue', cursive; /* Apply comic font */
+}
+
+/* Hover effect for each faq-section */
+.faq-section:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+/* Modal overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal content */
+.modal-content {
+    background-color: white;
+    border: 3px solid black; /* Similar border to the question's box */
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+    font-family: 'Comic Neue', cursive; /* Same font as questions */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Modal close button */
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Modal text */
+.modal-text {
+    font-size: calc(0.8em + 0.5vw); /* Responsive text size */
+    margin-top: 20px;
+    font-family: 'Comic Neue', cursive;
+}
+
+/* Ensure images fill their respective containers */
+img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Make sure images cover the div without distorting */
+}

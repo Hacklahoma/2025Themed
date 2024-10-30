@@ -4,6 +4,7 @@ import './App.css';
 import LandingPage from './components/LandingPage';
 import RatBreak from './components/RatBreak';
 import AboutPage from './components/AboutPage';
+import FaqPage from './components/FaqPage';
 import SponsorPage from './components/SponsorPage';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <LandingPage />
       <RatBreak />
       <AboutPage />
+      <FaqPage />
       <SponsorPage />
     </div>
   );
