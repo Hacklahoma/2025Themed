@@ -92,3 +92,89 @@ img {
       height: 100vh;
   }
 }
+
+/* Keyframe animations */
+
+@keyframes hover {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* City elements slide up from bottom */
+.city {
+  transform: translateY(100%);
+  animation: slideUp 1s ease-out forwards, hover 5s ease-in-out 1s infinite;
+}
+
+/* Title elements slide down from top */
+.title {
+  filter: drop-shadow(0 0.5rem 0.25rem gray);
+
+  transform: translateY(-100%);
+  animation: slideDown 1s ease-out forwards;
+}
+
+/* MLH Banner slides down from top after a delay */
+.mlhBanner {
+  filter: drop-shadow(0 0.5rem 0.25rem gray);
+
+  transform: translateY(-100%);
+  animation: slideDown 1s ease-in-out .5s forwards;
+}
+
+/* ScissorTail logo slides in from left after a delay */
+.logo {
+  filter: drop-shadow(0 0.5rem 0.25rem gray);
+
+  transform: translateX(-100%);
+  animation: slideInLeft 1s ease-in-out .5s forwards, hover 3s ease-in-out 1.5s infinite;
+}
+
+/* Subtitle fades in after all animations */
+.subtitle {
+  opacity: 0;
+  animation: fadeIn 1s ease-out 1s forwards;
+}
