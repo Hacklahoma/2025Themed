@@ -1,8 +1,10 @@
 import React from 'react';
 import './App.css';
+
 import LandingPage from './components/LandingPage';
-import AboutPage from './components/AboutPage';
 import RatBreak from './components/RatBreak';
+import AboutPage from './components/AboutPage';
+import SponsorPage from './components/SponsorPage';
 
 function App() {
   return (
@@ -10,6 +12,7 @@ function App() {
       <LandingPage />
       <RatBreak />
       <AboutPage />
+      <SponsorPage />
     </div>
   );
 }

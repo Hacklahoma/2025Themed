@@ -17,7 +17,7 @@ const LandingPage = () => {
         <div className="landing-page">
 
             {/* Desktop Layout */}
-            <div className="inner-container">
+            <div className="landing-page-desktop">
 
                 <img className="title HacklahomaTitle" src={HacklahomaTitle} alt="Hacklahoma Title" />
                 <img className="title HacklahomaTitle2025" src={HacklahomaTitle2025} alt="Hacklahoma Title 2025" />
@@ -32,7 +32,7 @@ const LandingPage = () => {
             </div>
 
             {/* Mobile Layout */}
-            <div className="mobile-container">
+            <div className="landing-page-mobile">
 
             </div>
 
