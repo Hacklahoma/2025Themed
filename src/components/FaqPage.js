@@ -19,18 +19,18 @@ const FaqPage = () => {
     ];
 
     const faqAnswers = [
-        "A hackathon is an event where programmers and others involved in software development collaborate intensively on software projects.",
-        "No, participation is free!",
-        "Yes, we offer travel reimbursements for eligible participants. Please check our travel policy for details.",
-        "Absolutely! We'll provide meals throughout the event.",
-        "No prior experience is required. Beginners are welcome!",
-        "You can work individually or in teams of up to 4 people.",
-        "Bring your laptop, chargers, and any hardware you might need.",
-        "We adhere to the MLH Code of Conduct to ensure a welcoming environment for all.",
-        "Students and recent graduates are welcome to attend.",
-        "Projects should be started during the hackathon to ensure fairness.",
-        "You're free to come and go as you please, but we encourage you to stay for the full experience!",
-        "Feel free to reach out to us at contact@example.com."
+        "A hack is something that is jury-rigged inelegantly but effectively, usually as a temporary solution to a problem. Like duct taping a hole in a sinking boat to keep it afloat.",
+        "Admissions is completely free for all students!",
+        "At this time, we will not be providing travel reimbursements.",
+        "We will supply food for Saturday's lunch, dinner, and Sunday's breakfast with plenty of snacks and drinks throughout. All free of charge!",
+        "No experience is needed. Whether you're a coder, an artist, or a writer, you'll get to work with various mentors, attend workshops, interact with companies, and learn alongside fellow participants.",
+        "We encourage everyone to work with a team! Teams may contain up to 4 people. We will also be offering a team-building session at the beginning of the hacking period.",
+        "You should bring a laptop, chargers, toiletries, a change of clothes, sleeping bag, pillow, and anything else you would need for an overnight weekend. Keep in mind that Hacklahoma will last for 24hrs.",
+        "Hacklahoma welcomes students from all backgrounds and values the importance of a safe and all-inclusive space. Anyone attending must adhere to the MLH Code of Conduct.",
+        "Any student over the age of 18 can participate, regardless of major, background, or skill level.",
+        "No, you cannot work or copy past projects. You can brainstorm ideas and collect whatever software and tools you need, as long as the project is completely new.",
+        "No, you're not confined here. Feel free to go home and get some rest, but be back in time for judging!",
+        "If your question wasn't answered, please feel free to contact us via Instagram, Twitter, Facebook or send us an email to hacklahoma@ou.edu"
     ];
 
     const pastelColors = ['#FAEDCB', '#C9E4DE', '#C6DEF1', '#DBCDF0', '#F2C6DE', '#F7D9C4'];
