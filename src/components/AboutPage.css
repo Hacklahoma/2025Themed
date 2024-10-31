@@ -5,7 +5,7 @@
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
     overflow: hidden;
-    background: linear-gradient(to bottom, #f49dd4, #AEC6CF);
+    background: linear-gradient(to bottom, #f49dd4, #C9E4DE);
   }
   
   /* Desktop container: Maintain a 16:9 aspect ratio (1920x1080) */

@@ -45,6 +45,12 @@ const FaqPage = () => {
         setSelectedQuestionIndex(null);
     };
 
+    // Group questions into rows of two
+    const rows = [];
+    for (let i = 0; i < faqQuestions.length; i += 2) {
+        rows.push(faqQuestions.slice(i, i + 2));
+    }
+
     return (
         <div className="faq-page">
 
@@ -52,15 +58,22 @@ const FaqPage = () => {
             <div className="faq-page-desktop">
 
                 <div className="faq-container">
-                    {/* 12 Unique Sections with Questions */}
-                    {faqQuestions.map((question, index) => (
+                    {/* Map over the rows */}
+                    {rows.map((rowQuestions, rowIndex) => (
                         <div
-                            className="faq-section"
-                            key={index}
-                            style={{ backgroundColor: pastelColors[index % pastelColors.length] }}
-                            onClick={() => handleQuestionClick(index)}
+                            className={`faq-row ${rowIndex % 2 === 0 ? 'row-shifted' : ''}`}
+                            key={rowIndex}
                         >
-                            {question}
+                            {rowQuestions.map((question, index) => (
+                                <div
+                                    className="faq-section"
+                                    key={rowIndex * 2 + index}
+                                    style={{ backgroundColor: pastelColors[(rowIndex * 2 + index) % pastelColors.length] }}
+                                    onClick={() => handleQuestionClick(rowIndex * 2 + index)}
+                                >
+                                    {question}
+                                </div>
+                            ))}
                         </div>
                     ))}
                 </div>
@@ -69,7 +82,7 @@ const FaqPage = () => {
 
             {/* Mobile Layout */}
             <div className="faq-page-mobile">
-
+                {/* Your mobile layout code here */}
             </div>
 
             {/* Modal */}
