@@ -33,6 +33,7 @@ const RatBreak = () => {
 
   return (
     <div className="rat-break" ref={ratBreakRef}>
+
       {/* Desktop Layout */}
       <div className="rat-break-desktop">
         <img
@@ -45,8 +46,14 @@ const RatBreak = () => {
 
       {/* Mobile Layout */}
       <div className="rat-break-mobile">
-        {/* You can implement similar logic for mobile if needed */}
+        <img
+          src={RunningRat}
+          alt="Running Rat"
+          className="rat-image"
+          style={{ left: `${ratPosition}%` }}
+        />
       </div>
+
     </div>
   );
 };
