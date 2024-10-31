@@ -40,7 +40,7 @@ const AboutPage = () => {
                 <div className="slide" key={index}>
                   <img
                     src={image}
-                    alt={`Carousel image ${index}`}
+                    alt={`Carousel item ${index}`}
                     onClick={() => setModalImage(image)}
                   />
                 </div>
