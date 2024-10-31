@@ -117,7 +117,7 @@
 /* Styles for each faq-section */
 .faq-section {
     width: 48%; /* Leave space between buttons */
-    border: 0.2vh solid black; /* Thin outline */
+    border: 0.4vh solid black; /* Thin outline */
     border-radius: 1.5vh; /* Curved corners */
     box-sizing: border-box;
     box-shadow: 0.5vh 0.5vh 0.5vh rgba(0,0,0,0.3); /* Slight drop shadow */

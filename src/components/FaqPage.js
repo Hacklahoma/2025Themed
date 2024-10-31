@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './FaqPage.css';
 
+// Desktop Assets
+import FAQText from '../assets/S3_FAQ.png';
+
 const FaqPage = () => {
 
     const faqQuestions = [
@@ -56,6 +59,8 @@ const FaqPage = () => {
 
             {/* Desktop Layout */}
             <div className="faq-page-desktop">
+
+                <img className="FAQText" src={FAQText} alt="FAQText" />
 
                 <div className="faq-container">
                     {/* Map over the rows */}
