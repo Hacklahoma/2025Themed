@@ -32,49 +32,70 @@ const AboutPage = () => {
   const [modalImage, setModalImage] = useState(null);
 
   return (
+
     <div className="about-page">
-      {/* Desktop Layout */}
-      <div className="about-page-desktop">
-        <img className="TitleHighlight" src={TitleHighlight} alt="TitleHighlight" />
-        <img className="TitleText" src={TitleText} alt="TitleText" />
-        <img className="BodyText" src={BodyText} alt="BodyText" />
-        <img className="ComicBook" src={ComicBook} alt="ComicBook" />
 
-        {/* Carousel */}
-        <section className="image-carousel">
-          <div className="carousel">
-            <div className="slide-track">
-              {imageList.concat(imageList).map((image, index) => (
-                <div className="slide" key={index}>
-                  <img
-                    src={image}
-                    alt={`Carousel item ${index}`}
-                    onClick={() => setModalImage(image)}
-                  />
+        {/* Desktop Layout */}
+        <div className="about-page-desktop">
+            <img className="TitleHighlight" src={TitleHighlight} alt="TitleHighlight" />
+            <img className="TitleText" src={TitleText} alt="TitleText" />
+            <img className="BodyText" src={BodyText} alt="BodyText" />
+            <img className="ComicBook" src={ComicBook} alt="ComicBook" />
+
+            {/* Carousel */}
+            <section className="image-carousel">
+                <div className="carousel">
+                    <div className="slide-track">
+                        {imageList.concat(imageList).map((image, index) => (
+                        <div className="slide" key={index}>
+                            <img
+                            src={image}
+                            alt={`Carousel item ${index}`}
+                            onClick={() => setModalImage(image)}
+                            />
+                        </div>
+                        ))}
+                    </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </div>
+            </section>
 
-            {/* Mobile Layout */}
-            <div className="about-page-mobile">
-
-                <img className="TitleHighlight" src={MobileTitleHighlight} alt="TitleHighlight" />
-                <img className="TitleText" src={MobileTitleText} alt="TitleText" />
-                <img className="BodyText" src={MobileBodyText} alt="BodyText" />
-
-                <img className="ComicBook" src={MobileComicBook} alt="ComicBook" />
-
-            </div>
-
-      {/* Modal */}
-      {modalImage && (
-        <div className="modal" onClick={() => setModalImage(null)}>
-          <img src={modalImage} alt="Enlarged view"/>
         </div>
-      )}
+
+        {/* Mobile Layout */}
+        <div className="about-page-mobile">
+
+            <img className="TitleHighlight" src={MobileTitleHighlight} alt="TitleHighlight" />
+            <img className="TitleText" src={MobileTitleText} alt="TitleText" />
+            <img className="BodyText" src={MobileBodyText} alt="BodyText" />
+
+            <img className="ComicBook" src={MobileComicBook} alt="ComicBook" />
+
+            {/* Carousel */}
+            <section className="image-carousel-mobile">
+                <div className="carousel">
+                    <div className="slide-track">
+                        {imageList.concat(imageList).map((image, index) => (
+                        <div className="slide" key={index}>
+                            <img
+                            src={image}
+                            alt={`Carousel item ${index}`}
+                            onClick={() => setModalImage(image)}
+                            />
+                        </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        {/* Modal */}
+        {modalImage && (
+            <div className="modal" onClick={() => setModalImage(null)}>
+                <img src={modalImage} alt="Enlarged view"/>
+            </div>
+        )}
+
     </div>
   );
 };
