@@ -4,6 +4,9 @@ import './FaqPage.css';
 // Desktop Assets
 import FAQText from '../assets/S3_FAQ.png';
 
+// Mobile Assets
+import MobileFAQText from '../assets/MS3_FAQ.png';
+
 const FaqPage = () => {
 
     const faqQuestions = [
@@ -87,8 +90,31 @@ const FaqPage = () => {
 
             {/* Mobile Layout */}
             <div className="faq-page-mobile">
-                {/* Your mobile layout code here */}
-            </div>
+
+                <img className="FAQText" src={MobileFAQText} alt="FAQText" />
+
+                <div className="faq-container-mobile">
+                    {/* Map over the rows */}
+                    {rows.map((rowQuestions, rowIndex) => (
+                        <div
+                            className={`faq-row-mobile ${rowIndex % 2 === 0 ? 'row-shifted-mobile' : ''}`}
+                            key={rowIndex}
+                        >
+                            {rowQuestions.map((question, index) => (
+                                <div
+                                    className="faq-section-mobile"
+                                    key={rowIndex * 2 + index}
+                                    style={{ backgroundColor: pastelColors[(rowIndex * 2 + index) % pastelColors.length] }}
+                                    onClick={() => handleQuestionClick(rowIndex * 2 + index)}
+                                >
+                                    {question}
+                                </div>
+                            ))}
+                        </div>
+                        ))}
+                    </div>
+                    
+                </div>
 
             {/* Modal */}
             {selectedQuestionIndex !== null && (
