@@ -125,6 +125,15 @@ img {
   }
 }
 
+@keyframes slideDownButton {
+  from {
+    transform: translateY(-1000%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -177,4 +186,30 @@ img {
 .subtitle {
   opacity: 0;
   animation: fadeIn 1s ease-out 1s forwards;
+}
+
+.apply-button {
+  position: relative;
+  width: 20%;
+  left: 30%;
+  height: 10.5%;
+  top: 50%;
+
+  transform: translateY(-1000%);
+  animation: slideDownButton 1s ease-out 1.5s forwards;
+
+  filter: drop-shadow(0 0.5rem 0.25rem gray);
+}
+
+.apply-button-mobile {
+  position: relative;
+  width: 48%;
+  height: 8%;
+  top: 45%;
+  right: -3%;
+
+  transform: translateY(-1000%);
+  animation: slideDownButton 1s ease-out 1.5s forwards;
+
+  filter: drop-shadow(0 0.5rem 0.25rem gray);
 }
