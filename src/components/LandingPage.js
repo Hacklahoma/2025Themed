@@ -12,6 +12,8 @@ import Clouds from '../assets/S1_Clouds.png';
 import MLHBanner from '../assets/S1_MLH-Banner.png';
 import ScissorTail from "../assets/S1_ScissorTailLogo.png";
 
+import ApplyButton from "../assets/S1_ApplyButton.png";
+
 // Mobile Assets
 import MobileHacklahomaTitle from "../assets/MS1_Title.png";
 import MobileHacklahomaTitle2025 from "../assets/MS1_2025.png";
@@ -42,6 +44,10 @@ const LandingPage = () => {
                 <img className="mlhBanner" src={MLHBanner} alt="MLHBanner" />
                 <img className="logo ScissorTail" src={ScissorTail} alt="ScissorTail Logo" />
 
+                <a className="apply-button" href="https://register.hacklahoma.org">
+                    <img src={ApplyButton} alt="Apply Button" />
+                </a>
+
             </div>
 
             {/* Mobile Layout */}
@@ -57,6 +63,10 @@ const LandingPage = () => {
 
                 <img className="mlhBanner" src={MobileMLHBanner} alt="MLHBanner" />
                 <img className="logo ScissorTail" src={MobileScissorTail} alt="ScissorTail Logo" />
+
+                <a className="apply-button-mobile" href="https://register.hacklahoma.org">
+                    <img src={ApplyButton} alt="Apply Button" />
+                </a>
 
             </div>
 
