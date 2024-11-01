@@ -28,6 +28,9 @@
     height: auto;
     max-width: 100%;
     max-height: 100%;
+
+    border: solid;
+    border-color: red;
   }
 
 /* Media query for mobile devices (screen width <= 750px) */
@@ -90,6 +93,8 @@
     }
   }
 
+/* FAQ DESKTOP */
+
 .faq-container {
     position: relative;
     width: 60%;
@@ -136,6 +141,56 @@
 .faq-section:hover {
     transform: scale(1.05); /* Grow slightly larger */
     box-shadow: 1vh 1vh 1vh rgba(0,0,0,0.3); /* Enhanced shadow on hover */
+}
+
+/* FAQ MOBILE */
+
+.faq-container-mobile {
+  position: relative;
+  width: 70%;
+  height: 70%;
+  top: 25%;
+  left: 20%;
+
+  display: grid;
+  grid-template-rows: repeat(6, auto);   /* 6 rows */
+  box-sizing: border-box;                /* Include border in size calculations */
+}
+
+/* Styles for each row */
+.faq-row-mobile {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2%; /* Vertical spacing between rows */
+}
+
+/* Shift every other row to the left by 25% */
+.row-shifted-mobile {
+  transform: translateX(-15%);
+}
+
+/* Styles for each faq-section */
+.faq-section-mobile {
+  width: 48%; /* Leave space between buttons */
+  border: 0.4vh solid black; /* Thin outline */
+  border-radius: 1.5vh; /* Curved corners */
+  box-sizing: border-box;
+  box-shadow: 0.5vh 0.5vh 0.5vh rgba(0,0,0,0.3); /* Slight drop shadow */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Center text within each button */
+  padding: 2%; /* Percentage-based padding */
+  font-size: min(4cqh, 2cqmax); /* Responsive text size */
+  transition: transform 0.2s, box-shadow 0.2s; /* Hover effects */
+  cursor: pointer;
+  font-family: 'Comic Neue', cursive; /* Apply comic font */
+}
+
+/* Hover effect for each faq-section */
+.faq-section-mobile:hover {
+  transform: scale(1.05); /* Grow slightly larger */
+  box-shadow: 1vh 1vh 1vh rgba(0,0,0,0.3); /* Enhanced shadow on hover */
 }
   
 /* Modal overlay */
